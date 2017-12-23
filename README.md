@@ -53,3 +53,39 @@ imports:      [ BrowserModule ],
 ### 元数据 
 
 元数据告诉 Angular 如何处理一个类。
+
+## 模版与数据绑定
+
+### 内联 (inline) 模板还是模板文件？
+通过给`@Component`添加`template`或者是直接在组件对应的HTML添加模版文件，无论用哪种风格，模板数据绑定在访问组件属性方面都是完全一样的。
+
+`template`的方式
+``` js
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>{{title}}</h1>
+    <h2>My favorite hero is: {{myHero}}</h2>
+    `
+})
+```
+Angular CLI 提供命令建立组件
+``` git
+ng generate component components/hero
+或
+ng generate component components/hero -it //直接建立不带html的内联模版
+```
+
+### 使用构造函数还是变量初始化？
+``` js
+export class AppComponent {
+  title: string;
+  myHero: string;
+  constructor() {
+    this.title = 'Tour of Heroes';
+    this.myHero = 'Windstorm';
+  }
+}
+```
+
+### 使用ngFor显示数组属性
