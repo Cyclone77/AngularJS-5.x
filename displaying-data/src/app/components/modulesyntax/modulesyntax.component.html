@@ -1,0 +1,30 @@
+<h3>插值表达式</h3>
+<p>My current hero is {{currentHero.name}}</p>
+
+<h3>模版表达式</h3>
+<p>The sum of 1 + 1 is {{1 + 1}}</p>
+<p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}</p>
+
+<h3>模版语句</h3>
+<button (click)="showmsg($event);">显示信息</button>
+
+<h3>绑定语法：概览</h3>
+<input type="checkbox" [(ngModel)]="isUnchanged">
+<span [hidden]="!isUnchanged">changed</span>
+
+<h3>绑定目标</h3>
+<h4>绑定DOM属性</h4>
+<span [title]="hover">鼠标效果</span>
+<h4>事件</h4>
+<button (click)="onSave($event)">Save</button>
+<h4>双向数据绑定</h4>
+<input type="text" [(ngModel)]="inputText">
+<span>{{inputText}}</span>
+<h4>HTML属性绑定</h4>
+<button [attr.fid]="help" [attr.title]="hover">help</button>
+<h4>CSS 类</h4>
+<input type="checkbox" [(ngModel)]="isUnchanged">
+<div [class.special]="isUnchanged">Special</div>
+<h4>样式</h4>
+<button [style.color]="isUnchanged ? 'red' : 'blue'">测试</button>
+<h4>事件绑定</h4>

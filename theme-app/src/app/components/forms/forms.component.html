@@ -1,0 +1,14 @@
+<h1>Form测试</h1>
+
+<form #ff="ngForm" class="example-form">
+    <mat-form-field class="example-full-width">
+        <input name="first" matInput placeholder="姓名" ngModel #first="ngModel">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input name="last" matInput placeholder="身份证" ngModel #last="ngModel">
+    </mat-form-field>
+</form>
+
+<p>First name value: {{ first.value }}</p>
+<p>First name valid: {{ last.value }}</p>
+<p>Form value: {{ ff.value | json }}</p>

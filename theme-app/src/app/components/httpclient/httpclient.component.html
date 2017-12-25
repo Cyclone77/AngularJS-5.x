@@ -1,0 +1,12 @@
+<div class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="姓名" [(ngModel)]="txtA0101">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="身份证" [(ngModel)]="txtA0177">
+    </mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="getData();" [disabled]="isShow">获得数据</button>
+
+<mat-progress-bar class="fixed_bt" *ngIf="isShow" mode="indeterminate"></mat-progress-bar>
