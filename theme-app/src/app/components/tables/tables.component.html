@@ -1,0 +1,54 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef>排序字段</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.DispOrder}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>姓名</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.A0101}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef>性别</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.A0107}} </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef>身份证</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.A0177}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="option">
+            <mat-header-cell *matHeaderCellDef>操作</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <a href="javascript:;" (click)="editData($event, element, f);">编辑</a>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+</div>
+<hr>
+<form #f="ngForm" class="example-form" (ngSubmit)="saveData()">
+    <mat-form-field class="example-full-width">
+        <input name="A0101" matInput placeholder="姓名" [(ngModel)]="psnData.A0101">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input name="A0177" matInput placeholder="身份证" [(ngModel)]="psnData.A0177">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input name="A0107" matInput placeholder="性别" [(ngModel)]="psnData.A0107">
+    </mat-form-field>
+    <button mat-raised-button color="primary">保存</button>
+</form>

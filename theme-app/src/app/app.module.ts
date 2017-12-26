@@ -16,12 +16,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsComponent } from './components/forms/forms.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { TablesComponent } from './components/tables/tables.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     HttpclientComponent,
-    FormsComponent
+    FormsComponent,
+    TablesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatRadioModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

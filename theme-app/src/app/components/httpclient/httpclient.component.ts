@@ -12,7 +12,7 @@ export class HttpclientComponent implements OnInit {
   results: any;
   txtA0101: string;
   txtA0177: string;
-  isShow: boolean = false;
+  isShow: boolean;
 
   constructor(
     private http: HttpClient
