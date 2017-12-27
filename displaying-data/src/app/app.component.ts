@@ -8,10 +8,12 @@ import { Hero } from './hero';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title: string;
   myHero: string;
   heroes: Array<Hero>;
-  
+  fontSizePx = 12;
+
   constructor() {
     this.title = 'Tour of Heroes';
     this.heroes = [

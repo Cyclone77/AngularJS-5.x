@@ -4,7 +4,7 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 import { HttpHeaders } from '@angular/common/http';
 
 import { HttpClient } from '@angular/common/http';
-import { NgForm } from '../../../../node_modules/_@angular_forms@5.1.2@@angular/forms/src/directives/ng_form';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-tables',

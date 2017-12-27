@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ModulesyntaxComponent } from './components/modulesyntax/modulesyntax.component';
 import { HttpclientComponent } from './components/httpclient/httpclient.component';
+import { TwowayComponent } from './components/twoway/twoway.component';
+import { IndirectivesComponent } from './components/indirectives/indirectives.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { HttpclientComponent } from './components/httpclient/httpclient.componen
     AppComponent,
     HeroComponent,
     ModulesyntaxComponent,
-    HttpclientComponent
+    HttpclientComponent,
+    TwowayComponent,
+    IndirectivesComponent
   ],
   imports: [
     BrowserModule,

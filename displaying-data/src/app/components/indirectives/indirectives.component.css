@@ -1,0 +1,11 @@
+.special {
+    color: blue;
+}
+
+.saveable {
+    background-color: rgb(160, 160, 153);
+}
+
+.modified {
+    border: 1px solid;
+}
