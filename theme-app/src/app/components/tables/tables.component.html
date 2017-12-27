@@ -1,3 +1,17 @@
+<button mat-fab (click)='addPsnData(f)'>增加</button>
+<form #f="ngForm" class="example-form" (ngSubmit)="saveData(f)">
+    <mat-form-field class="example-full-width">
+        <input name="A0101" matInput placeholder="姓名" [(ngModel)]="psnData.A0101">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input name="A0177" matInput placeholder="身份证" [(ngModel)]="psnData.A0177">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input name="A0107" matInput placeholder="性别" [(ngModel)]="psnData.A0107">
+    </mat-form-field>
+    <button mat-raised-button color="primary">保存</button>
+</form>
+<hr>
 <div class="example-container mat-elevation-z8">
     <mat-table #table [dataSource]="dataSource">
 
@@ -29,6 +43,7 @@
             <mat-header-cell *matHeaderCellDef>操作</mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <a href="javascript:;" (click)="editData($event, element, f);">编辑</a>
+                <a href="javascript:;" (click)="delData($event, element, f);">删除</a>
             </mat-cell>
         </ng-container>
 
@@ -40,15 +55,3 @@
     </mat-paginator>
 </div>
 <hr>
-<form #f="ngForm" class="example-form" (ngSubmit)="saveData()">
-    <mat-form-field class="example-full-width">
-        <input name="A0101" matInput placeholder="姓名" [(ngModel)]="psnData.A0101">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <input name="A0177" matInput placeholder="身份证" [(ngModel)]="psnData.A0177">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <input name="A0107" matInput placeholder="性别" [(ngModel)]="psnData.A0107">
-    </mat-form-field>
-    <button mat-raised-button color="primary">保存</button>
-</form>
