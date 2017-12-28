@@ -1,8 +1,55 @@
 <h1>Elemet UI</h1>
+<div el-row gutter="20">
+    <div el-col [span]="14">
+        <!--绑定的 model 与 label 值相同时就会被选中-->
+        <el-radio class="radio" [(model)]="radio" label="备选1">备选项1</el-radio>
 
-<!--绑定的 model 与 label 值相同时就会被选中-->
-<el-radio class="radio" [(model)]="radio" label="备选1">备选项1</el-radio>
+        <el-radio class="radio" [(model)]="radio" label="备选2">备选项2</el-radio>
 
-<el-radio class="radio" [(model)]="radio" label="备选2">备选项2</el-radio>
+        <el-radio class="radio" [(model)]="radio" label="备选3">备选项3</el-radio>
 
-<el-radio class="radio" [(model)]="radio" label="备选3">备选项3</el-radio>
+        <hr>
+
+        <div class="block">
+            <span class="demonstration">默认显示颜色</span>
+            <span class="wrapper">
+      <el-button type="success">成功按钮</el-button>
+      <el-button type="warning">警告按钮</el-button>
+      <el-button type="danger">危险按钮</el-button>
+      <el-button type="info">信息按钮</el-button>
+    </span>
+        </div>
+        <br>
+        <div class="block">
+            <span class="demonstration">hover 显示颜色</span>
+            <span class="wrapper">
+      <el-button [plain]="true" type="success">成功按钮</el-button>
+      <el-button [plain]="true" type="warning">警告按钮</el-button>
+      <el-button [plain]="true" type="danger">危险按钮</el-button>
+      <el-button [plain]="true" type="info">信息按钮</el-button>
+    </span>
+        </div>
+        <hr>
+        <!--你可以通过 model 来获取每次选择的值-->
+        <!--或者通过绑定 (modelChange)=handle 来获得每次值改变的触发-->
+        <el-select [model]="value" placeholder="请选择" (modelChange)="handle($event)">
+            <el-option *ngFor="let item of foods" [label]="item.label" [value]="item.value">
+            </el-option>
+        </el-select>
+        <el-button (click)="clear()">clear</el-button>
+        <hr>
+        <el-switch [(model)]="value1">
+        </el-switch>
+        <el-switch [model]="true" [active-color]="'#13ce66'" [inactive-color]="'#ff4949'">
+        </el-switch>
+        <hr>
+        <el-date-picker (modelChange)="handle($event)" (clear-click)="clearClickHandle($event)">
+        </el-date-picker>
+        <hr>
+        <el-input [model]="input" placeholder="请输入内容"></el-input>
+
+        <hr>
+        <app-forms></app-forms>
+        <app-tables></app-tables>
+    </div>
+</div>

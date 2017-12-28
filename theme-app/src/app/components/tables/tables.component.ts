@@ -18,6 +18,8 @@ export class TablesComponent implements OnInit {
   dataSource = new MatTableDataSource();
   psnData: Person = {} as Person;
   myHttpHead = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+
+  url = 'http://192.168.0.50:8080/api/person';
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(
     private http: HttpClient
@@ -28,7 +30,7 @@ export class TablesComponent implements OnInit {
   }
 
   loadPsnData() {
-    this.http.get('http://192.168.0.140:5000/api/Person').subscribe(data => {
+    this.http.get(this.url).subscribe(data => {
       // Read the result field from the JSON response.
       this.dataSource = new MatTableDataSource<Person>(data as Person[]);
       // console.log(this.dataSource.data);
@@ -46,7 +48,7 @@ export class TablesComponent implements OnInit {
 
   saveData(form) {
     if (this.psnData && this.psnData['PersonID']) {
-      this.http.put('http://192.168.0.140:5000/api/Person', JSON.stringify(this.psnData), this.myHttpHead).subscribe(
+      this.http.put(this.url, JSON.stringify(this.psnData), this.myHttpHead).subscribe(
         data => {
           this.loadPsnData();
           console.log(data);
@@ -57,7 +59,7 @@ export class TablesComponent implements OnInit {
       );
     } else {
       if (form.value) {
-        this.http.post('http://192.168.0.140:5000/api/Person', JSON.stringify(this.psnData), this.myHttpHead).subscribe(
+        this.http.post(this.url, JSON.stringify(this.psnData), this.myHttpHead).subscribe(
           data => {
             this.loadPsnData();
             console.log(data);
@@ -73,7 +75,7 @@ export class TablesComponent implements OnInit {
   delData(e, that, form) {
     const id = that.PersonID;
     if (id === '') { return; }
-    this.http.delete('http://192.168.0.140:5000/api/Person/' + id, this.myHttpHead).subscribe(
+    this.http.delete(this.url + id, this.myHttpHead).subscribe(
         data => {
           this.loadPsnData();
           console.log(data);
