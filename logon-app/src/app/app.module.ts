@@ -7,13 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LogonComponent } from './components/logon/logon.component';
-import { PsneditComponent } from './components/home/psnedit/psnedit.component';
+
+import { PsneditComponent } from './components/psnedit/psnedit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/logon', pathMatch: 'full' },
   { path: 'logon', component: LogonComponent },
   {
-      path: 'home',
+      path: 'views',
       component: HomeComponent,
       children: [
         { path: '', redirectTo: 'psnedit', pathMatch: 'full' },

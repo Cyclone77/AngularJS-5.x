@@ -9,6 +9,7 @@ import { ModulesyntaxComponent } from './components/modulesyntax/modulesyntax.co
 import { HttpclientComponent } from './components/httpclient/httpclient.component';
 import { TwowayComponent } from './components/twoway/twoway.component';
 import { IndirectivesComponent } from './components/indirectives/indirectives.component';
+import { MydirDirective } from './directives/mydir.directive';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { IndirectivesComponent } from './components/indirectives/indirectives.co
     ModulesyntaxComponent,
     HttpclientComponent,
     TwowayComponent,
-    IndirectivesComponent
+    IndirectivesComponent,
+    MydirDirective
   ],
   imports: [
     BrowserModule,
