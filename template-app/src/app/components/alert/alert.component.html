@@ -1,0 +1,11 @@
+<div>
+    <ng-container *ngIf="leftTmp">
+        <div class="left" [ngStyle]="{ 'width.px': leftwidth }">
+            <ng-template [ngTemplateOutlet]="leftTmp"></ng-template>
+        </div>
+    </ng-container>
+    <hr>
+    <ng-container>
+        <ng-template [ngTemplateOutlet]="rightTmp"></ng-template>
+    </ng-container>
+</div>
