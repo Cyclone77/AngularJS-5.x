@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('tree-app App', () => {
+describe('prime-ng App', () => {
   let page: AppPage;
 
   beforeEach(() => {
