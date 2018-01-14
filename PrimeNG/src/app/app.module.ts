@@ -5,11 +5,13 @@ import { TreeModule } from 'primeng/primeng';
 
 
 import { AppComponent } from './app.component';
+import { SysPipePipe } from './sys-pipe.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SysPipePipe
   ],
   imports: [
     BrowserModule,

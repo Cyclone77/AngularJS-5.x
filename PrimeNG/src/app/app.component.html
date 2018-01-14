@@ -1,3 +1,11 @@
 <h1>PrimeNG</h1>
 
 <p-tree [value]="treeData"></p-tree>
+
+<p>{{ date | date:"yyyy-mm-dd"}}</p>
+
+<ul>
+    <li *ngFor="let item of dataList | sysPipe ">
+        <p>{{ item.name }}</p>
+    </li>
+</ul>

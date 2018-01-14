@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { TreeModule, TreeNode } from 'primeng/primeng';
 
 @Component({
@@ -9,7 +9,24 @@ import { TreeModule, TreeNode } from 'primeng/primeng';
 export class AppComponent {
   treeData: TreeNode[];
 
+  date: Date;
+
+  dataList = [{
+      name: 'a0101',
+      sys: false
+  }, {
+    name: 'a0102',
+    sys: true
+},{
+    name: 'a0103',
+    sys: false
+},{
+    name: 'a0104',
+    sys: true
+}];
+
   ngOnInit() {
+    this.date = new Date();
     this.treeData = [
       {
           "label": "Documents",
