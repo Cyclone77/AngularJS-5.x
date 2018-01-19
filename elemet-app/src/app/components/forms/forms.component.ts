@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
+import {NgForm} from '@angular/forms';
 import { FormGroup, FormBuilder, AbstractControl, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-forms',

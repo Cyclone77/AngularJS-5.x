@@ -1,55 +1,63 @@
-<h1>Elemet UI</h1>
-<div el-row gutter="20">
-    <div el-col [span]="14">
-        <!--绑定的 model 与 label 值相同时就会被选中-->
-        <el-radio class="radio" [(model)]="radio" label="备选1">备选项1</el-radio>
+<el-menu model="2" default-active="2" class="el-menu-vertical-demo" (modelChange)="handle($event)">
+    <el-menu-item index="client/index">
+        <i class="fa fa-home fa-fw fa-lg"></i>
+        <span class="menu-text">主页</span>
+    </el-menu-item>
+    <el-submenu index="1">
+        <ng-template #title>
+            <i class="fa fa-credit-card fa-fw fa-lg"></i>
+            <span class="menu-text">工资管理</span>
+        </ng-template>
+        <el-menu-item index="client/salary-manage/salary-post">
+            <span class="menu-child-stance"></span>
+            <i class="fa fa-bank fa-fw fa-lg"></i>
+            <span class="menu-text">薪级工资标准</span>
+        </el-menu-item>
+        <el-menu-item index="client/salary-manage/salary-entering">
+            <span class="menu-child-stance"></span>
+            <i class="fa fa-money fa-fw fa-lg"></i>
+            <span class="menu-text">薪级工资录入</span>
+        </el-menu-item>
+    </el-submenu>
+    <el-menu-item index="client/psnedit">
+        <i class="fa fa-address-card-o fa-fw fa-lg"></i>
+        <span class="menu-text">人员管理</span>
+    </el-menu-item>
+    <!-- <el-menu-item index="client/unit"><i class="el-icon-setting"></i>机构管理</el-menu-item> -->
+    <el-menu-item index="admin/module-manage">
+        <i class="fa fa-sitemap fa-fw fa-lg"></i>
+        <span class="menu-text">模块管理</span>
+    </el-menu-item>
+    <el-menu-item index="admin/authorization">
+        <i class="fa fa-address-card fa-fw fa-lg"></i>
+        <span class="menu-text">授权分组</span>
+    </el-menu-item>
+    <el-submenu index="1">
+        <ng-template #title>
+            <i class="fa  fa-key fa-lg"></i>
+            <span class="menu-text">账户管理</span>
+        </ng-template>
+        <el-menu-item index="admin/useraccount/useraccount-manage">
+            <span class="menu-child-stance"></span>
+            <i class="fa fa-users fa-fw fa-lg"></i>
+            <span class="menu-text">账户管理</span>
+        </el-menu-item>
+        <el-menu-item index="admin/useraccount/usermodule-manage">
+            <span class="menu-child-stance"></span>
+            <i class="fa fa-venus-mars fa-fw fa-lg"></i>
+            <span class="menu-text">账户模块</span>
+        </el-menu-item>
+    </el-submenu>
 
-        <el-radio class="radio" [(model)]="radio" label="备选2">备选项2</el-radio>
 
-        <el-radio class="radio" [(model)]="radio" label="备选3">备选项3</el-radio>
+    <el-menu-item index="admin/role">
+        <i class="fa fa-drivers-license-o fa-fw fa-lg"></i>
+        <span class="menu-text">角色管理</span>
+    </el-menu-item>
+    <el-menu-item index="admin/unitdendrogram">
+        <i class="fa fa-university fa-fw fa-lg"></i>
+        <span class="menu-text">机构树状图</span>
+    </el-menu-item>
+</el-menu>
 
-        <hr>
-
-        <div class="block">
-            <span class="demonstration">默认显示颜色</span>
-            <span class="wrapper">
-      <el-button type="success">成功按钮</el-button>
-      <el-button type="warning">警告按钮</el-button>
-      <el-button type="danger">危险按钮</el-button>
-      <el-button type="info">信息按钮</el-button>
-    </span>
-        </div>
-        <br>
-        <div class="block">
-            <span class="demonstration">hover 显示颜色</span>
-            <span class="wrapper">
-      <el-button [plain]="true" type="success">成功按钮</el-button>
-      <el-button [plain]="true" type="warning">警告按钮</el-button>
-      <el-button [plain]="true" type="danger">危险按钮</el-button>
-      <el-button [plain]="true" type="info">信息按钮</el-button>
-    </span>
-        </div>
-        <hr>
-        <!--你可以通过 model 来获取每次选择的值-->
-        <!--或者通过绑定 (modelChange)=handle 来获得每次值改变的触发-->
-        <el-select [model]="value" placeholder="请选择" (modelChange)="handle($event)">
-            <el-option *ngFor="let item of foods" [label]="item.label" [value]="item.value">
-            </el-option>
-        </el-select>
-        <el-button (click)="clear()">clear</el-button>
-        <hr>
-        <el-switch [(model)]="value1">
-        </el-switch>
-        <el-switch [model]="true" [active-color]="'#13ce66'" [inactive-color]="'#ff4949'">
-        </el-switch>
-        <hr>
-        <el-date-picker (modelChange)="handle($event)" (clear-click)="clearClickHandle($event)">
-        </el-date-picker>
-        <hr>
-        <el-input [model]="input" placeholder="请输入内容"></el-input>
-
-        <hr>
-        <app-forms></app-forms>
-        <app-tables></app-tables>
-    </div>
-</div>
+<router-outlet></router-outlet>

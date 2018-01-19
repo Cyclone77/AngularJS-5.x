@@ -1,5 +1,7 @@
 import { Component, Inject, forwardRef } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,15 +18,16 @@ export class AppComponent {
     { value: '选项5', label: '北京烤鸭' }
   ];
 
-
-
-  handle(event): void {
-    this.value = event;
-    console.log(event, this.value);
-  }
+  constructor(
+    private router: Router
+  ) { }
 
   clear(): void {
     this.value = null;
+  }
+
+  handle(path: string): void {
+    this.router.navigate([path]);
   }
 
 }

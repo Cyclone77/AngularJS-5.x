@@ -8,18 +8,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LogonComponent } from './components/logon/logon.component';
 
-import { PsneditComponent } from './components/psnedit/psnedit.component';
+// import { PsneditComponent } from './components/psnedit/psnedit.component';
+import { PsneditModule } from '@glui/psnedit/psnedit.module';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/logon', pathMatch: 'full' },
   { path: 'logon', component: LogonComponent },
   {
       path: 'views',
-      component: HomeComponent,
-      children: [
-        { path: '', redirectTo: 'psnedit', pathMatch: 'full' },
-        { path: 'psnedit', component: PsneditComponent }
-      ]
+      component: HomeComponent
   }
 ];
 
@@ -27,12 +25,12 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LogonComponent,
-    PsneditComponent
+    LogonComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    PsneditModule
   ],
   providers: [],
   bootstrap: [AppComponent]
