@@ -1,0 +1,6 @@
+<form-text [(label)]="label" [(model)]="value"></form-text>
+<span>父组件：{{ value }}</span>
+
+<button (click)="setInputData(1)">设置子组件label为1</button>
+<button (click)="setInputData(2)">设置子组件label为2</button>
+<button (click)="setInputData(3)">设置子组件label为3</button>

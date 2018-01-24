@@ -1,0 +1,9 @@
+<hr>
+<h1>子组件</h1>
+<div class="form_text">
+  <label>{{ label }}：</label>
+  <input type="text" [(ngModel)]="model" (ngModelChange)="handleInput($event)"> 
+  <span>{{model}}</span>
+  <button (click)="setlabel(77)">改变label</button>
+</div>
+<hr>

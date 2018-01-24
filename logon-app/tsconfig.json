@@ -15,10 +15,9 @@
       "es2017",
       "dom"
     ],
-    "baseUrl": "src",
+    "baseUrl": "./",
     "paths": {
-        // "@glui": ["app/components"],
-        "@glui/*": ["app/components/*"]
+        "@glui/*": ["src/app/components/*"]
     }
   }
 }

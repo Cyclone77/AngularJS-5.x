@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('elemet-app App', () => {
+describe('formtext App', () => {
   let page: AppPage;
 
   beforeEach(() => {

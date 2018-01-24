@@ -10,6 +10,7 @@ import { LogonComponent } from './components/logon/logon.component';
 
 // import { PsneditComponent } from './components/psnedit/psnedit.component';
 import { PsneditModule } from '@glui/psnedit/psnedit.module';
+import { CodelistComponent } from './components/codelist/codelist.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LogonComponent
+    LogonComponent,
+    CodelistComponent
   ],
   imports: [
     BrowserModule,
