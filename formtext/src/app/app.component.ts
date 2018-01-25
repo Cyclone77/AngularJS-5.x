@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessageService } from './message/message.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,10 @@ export class AppComponent {
   value = '222';
   label = '123';
 
+  constructor(
+    private _msgService: MessageService
+  ) {}
+
   setInputData(text) {
     this.label = text;
     this.value = '5555';
@@ -18,5 +23,9 @@ export class AppComponent {
 
   textChange(val) {
     // this.label = val;
+  }
+
+  showDlg() {
+    this._msgService.success('成功了!');
   }
 }
