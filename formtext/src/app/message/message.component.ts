@@ -7,14 +7,6 @@ import {
   animate
 } from '@angular/animations';
 
-const mapping = {
-  success: 'glyphicon-ok-sign',
-  warning: 'glyphicon-exclamation-sign',
-  error: 'glyphicon-exclamation-sign',
-  info: 'glyphicon-ok-circle',
-  changeDetection: ChangeDetectionStrategy.OnPush
-};
-
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'message',

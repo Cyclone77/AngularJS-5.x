@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { MessageService } from './message/message.service';
-
+import { AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,11 +13,20 @@ export class AppComponent {
   input2 = '123';
   value = '222';
   label = '123';
+  validateForm: FormGroup;
 
   constructor(
-    private _msgService: MessageService
+    private _msgService: MessageService,
+    private formBuilder: FormBuilder
   ) {}
 
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit() {
+    this.validateForm = this.formBuilder.group({
+      city: [ '', [this.cityValidator] ],
+      email: Validators.email
+    });
+  }
   setInputData(text) {
     this.label = text;
     this.value = '5555';
@@ -27,5 +38,31 @@ export class AppComponent {
 
   showDlg() {
     this._msgService.success('成功了!');
+  }
+
+  statusCtrl(item: string): string {
+    if (!this.validateForm.controls[item]) { return; }
+    const control: AbstractControl = this.validateForm.controls[item];
+    return control.dirty && control.hasError('status') ? control.errors.status : '';
+  }
+
+  messageCtrl(item: string): string {
+    if (!this.validateForm.controls[item]) { return; }
+    const control: AbstractControl = this.validateForm.controls[item];
+    return control.dirty && control.hasError('message') ? control.errors.message : '';
+  }
+
+  private cityValidator = (control: FormControl) => {
+    if (!control.value) {
+      return { status: 'error', message: '必须填写城市名' };
+    }
+    if (!/[一-龥]/.test(control.value)) {
+      return { status: 'error', message: '城市名必须是中文' };
+    }
+    return { status: 'success' };
+  }
+
+  submit() {
+    console.log(this.validateForm.value);
   }
 }
