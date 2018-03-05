@@ -40,11 +40,27 @@
     </mat-tab>
 </mat-tab-group>
 
-<el-form [formGroup]="validateForm" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo">
+<el-form [formGroup]="validateForm" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-demo" #cityForm="ngForm">
     <el-form-item label="城市" [required]="true" [status]="statusCtrl('city')" [error]="messageCtrl('city')">
         <el-input formControlName="city"></el-input>
     </el-form-item>
     <el-form-item>
         <el-button type="primary" (click)="submit()">提交</el-button>
     </el-form-item>
+
 </el-form>
+<!-- <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button> -->
+
+<hr>
+<app-form-demo></app-form-demo>
+
+<input type="text" [(ngModel)]="name">
+<app-watchtext [name]="name"></app-watchtext>
+
+<app-changtest></app-changtest>
+
+<h2>Source code version</h2>
+<button (click)="newMinor()">New minor version</button>
+<button (click)="newMajor()">New major version</button>
+<button (click)="newPerson()">改变对象</button>
+<app-changtest [major]="major" [minor]="minor" [person]="person"></app-changtest>

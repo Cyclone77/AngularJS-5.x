@@ -14,6 +14,10 @@ export class AppComponent {
   value = '222';
   label = '123';
   validateForm: FormGroup;
+  names = '';
+  major = 1;
+  minor = 23;
+  person = {};
 
   constructor(
     private _msgService: MessageService,
@@ -23,10 +27,27 @@ export class AppComponent {
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
     this.validateForm = this.formBuilder.group({
-      city: [ '', [this.cityValidator] ],
-      email: Validators.email
+      city: [ '', [this.cityValidator] ]
     });
+
   }
+
+  newPerson() {
+    this.person  = {
+      name: '',
+      age: 0
+    };
+  }
+
+  newMinor() {
+    this.minor++;
+  }
+
+  newMajor() {
+    this.major++;
+    this.minor = 0;
+  }
+
   setInputData(text) {
     this.label = text;
     this.value = '5555';
@@ -64,5 +85,6 @@ export class AppComponent {
 
   submit() {
     console.log(this.validateForm.value);
+    console.log(this.validateForm);
   }
 }

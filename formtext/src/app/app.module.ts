@@ -12,11 +12,17 @@ import { MessageModule } from './message/message.module';
 
 import { HeadlineModule } from 'angular-cyui';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FormDemoComponent } from './form-demo/form-demo.component';
+import { WatchtextComponent } from './watchtext/watchtext.component';
+import { ChangtestComponent } from './changtest/changtest.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormTextComponent
+    FormTextComponent,
+    FormDemoComponent,
+    WatchtextComponent,
+    ChangtestComponent
   ],
   imports: [
     BrowserModule,

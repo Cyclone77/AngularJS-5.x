@@ -1,0 +1,6 @@
+<input type="text" required [(ngModel)]="username" #userName="ngModel"> {{userName.valid}}
+
+<div *ngIf="userName.errors?.required">请您输入用户名</div>
+<div *ngIf="userName.errors?.minlength">
+    用户名的长度必须大于 {{userName.errors?.minlength.requiredLength}}，当前的长度为 {{userName.errors?.minlength.actualLength}}
+</div>
