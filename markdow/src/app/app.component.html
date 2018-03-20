@@ -1,8 +1,12 @@
 <h1>MarkDown</h1>
 
-<div class="print" #container>
+<button (click)="onlinePrint()">打印</button>
+<div class="print">
     <h1>打印内容</h1>
-    <button (click)="onlinePrint()">打印</button>
 </div>
 
+
 <p appHighlight highlightColor="green">Highlight me!</p>
+
+
+<iframe src="/assets/社保、公积金数据确认表v1.htm" frameborder="0" #container></iframe>

@@ -30,8 +30,10 @@ export class AppComponent {
     // pull out the chart
     body.appendChild(container);
     // print
-    win.focus();
-    win.print();
+    // win.focus();
+    // win.print();
+    container.contentWindow.focus();
+    container.contentWindow.print();
 
     // allow the browser to prepare before reverting
     setTimeout(function () {
